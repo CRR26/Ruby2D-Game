@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class rubyController : MonoBehaviour
 {
+    float horizontal;
+    float vertical;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,12 +15,11 @@ public class rubyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     { 
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-        Debug.Log("horizontal");
+        horizontal = Input.GetAxis("Horizontal");
+        vertical = Input.GetAxis("Vertical");
         Vector2 position = transform.position;
-        position.x = position.x + 0.1f * horizontal;
-         position.y = position.y + 0.1f * vertical;
+        position.x = position.x + 3.0f * horizontal * Time.deltaTime;
+        position.y = position.y + 3.0f * vertical * Time.deltaTime;
         transform.position = position;
     }
 }
