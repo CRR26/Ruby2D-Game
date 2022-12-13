@@ -37,7 +37,9 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets/script/rubyController.cs" />
+     <Compile Include="Assets/script/EnemyController.cs" />
      <Compile Include="Assets/script/HealthCollectible.cs" />
+     <Compile Include="Assets/CodeChallenge/CodeChallenge.cs" />
      <None Include="Assets/2DBeginner_Third-PartyNotice.txt" />
     <Reference Include="UnityEngine">
         <HintPath>/Users/game2-09/Downloads/2020.3.27f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
