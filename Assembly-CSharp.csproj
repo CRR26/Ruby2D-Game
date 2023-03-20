@@ -36,12 +36,14 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets/script/DamageZone.cs" />
      <Compile Include="Assets/script/RubyController.cs" />
      <Compile Include="Assets/script/EnemyController.cs" />
      <Compile Include="Assets/script/HealthCollectible.cs" />
+     <Compile Include="Assets/script/NonePlayerCharacter.cs" />
      <Compile Include="Assets/CodeChallenge/CodeChallenge.cs" />
      <Compile Include="Assets/script/UIHealthBar.cs" />
-     <Compile Include="Assets/script/NonePlayerCharacter.cs" />
+     <Compile Include="Assets/script/Projectile.cs" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets/2DBeginner_Third-PartyNotice.txt" />
