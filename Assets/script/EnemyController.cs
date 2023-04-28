@@ -14,7 +14,7 @@ public class EnemyController : MonoBehaviour
     Animator animator; 
     bool broken;
 
-    // Start is called before the first frame update
+     // Start is called before the first frame update
     void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
@@ -22,9 +22,14 @@ public class EnemyController : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        //remember ! inverse the test, so if broken is true !broken will be false and return won’t be executed.
+        if(!broken)
+        {
+            return;
+        }
+        
         timer -= Time.deltaTime;
 
         if (timer < 0)
@@ -32,10 +37,9 @@ public class EnemyController : MonoBehaviour
             direction = -direction;
             timer = changeTime;
         }
-       Vector2 position = rigidbody2D.position;
     }
-     
-     void FixedUpdate()
+    
+    void FixedUpdate()
     {
         //remember ! inverse the test, so if broken is true !broken will be false and return won’t be executed.
         if(!broken)
@@ -48,14 +52,14 @@ public class EnemyController : MonoBehaviour
         if (vertical)
         {
             position.y = position.y + Time.deltaTime * speed * direction;
-            animator.SetFloat("Move X", 0);
+            animator.SetFloat("Move X", 1);
             animator.SetFloat("Move Y", direction);
         }
         else
         {
             position.x = position.x + Time.deltaTime * speed * direction;
             animator.SetFloat("Move X", direction);
-            animator.SetFloat("Move Y", 0);
+            animator.SetFloat("Move Y", 1);
         }
         
         rigidbody2D.MovePosition(position);
@@ -77,7 +81,8 @@ public class EnemyController : MonoBehaviour
         broken = false;
         rigidbody2D.simulated = false;
         //optional if you added the fixed animation
-        animator.SetTrigger("Fixed");
+        //animator.SetTrigger("Fixed");
+        Destroy(gameObject);
     }
     
 }
